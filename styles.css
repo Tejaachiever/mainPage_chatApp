@@ -11,6 +11,12 @@ height: 100vh;
 margin: 0;
     
 }
+/*changes*/
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
 .half {
     /* flex: 1;
     height: 100vh;
@@ -25,6 +31,7 @@ margin: 0;
     justify-content: space-evenly;
     margin: 0.1rem; /* Small margin around the half containers */
      padding: 0.1rem;
+     
     
 }
 
@@ -76,13 +83,37 @@ width: 300px; /* Adjust width as needed */
 h2, p {
 margin: 10px 0; /* Space between elements */
 }
+.mob-div {
+    display: none;
+}
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     body {
-        flex-direction: column; /* Stack vertically on small screens */
+        margin: 0;
+        padding: 0;
     }
 
-    .half {
-        flex: 1 1 100%; /* Each half takes full width */
+    /* Hide the .half divs and the separator on mobile */
+    .half, .separator {
+        display: none;
+    }
+
+    /* Show mob-div on mobile */
+    .mob-div {
+        display: block;
+        width: 100vw;  /* Full width of the viewport */
+        height: 100vh;  /* Full height of the viewport */
+    }
+
+    .mob-iframe {
+        width: 100vw; /* Full width of the viewport */
+        height: 100vh; /* Full height of the viewport */
+        border: none;
+    }
+
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
     }
 }
